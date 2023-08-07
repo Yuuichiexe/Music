@@ -110,9 +110,9 @@ async def gen_thumb(videoid, user_id):
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
         logo.thumbnail((500, 500), Image.LANCZOS)
-        width = int((1280 - 500) / 3)
+        width = int((1280 - 500) / 10)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 138), mask=logo)
+        background.paste(logo, (width + 2, 120), mask=logo)
         background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
@@ -134,7 +134,7 @@ async def gen_thumb(videoid, user_id):
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 530),
+                    ((1280 - text_w) / 2, 130),
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
@@ -155,7 +155,7 @@ async def gen_thumb(videoid, user_id):
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1280 - text_w) / 2, 660),
+            ((1280 - text_w) / 2, 690),
             f"Duration: {duration} Mins",
             fill="white",
             font=arial,
@@ -250,9 +250,9 @@ async def gen_qthumb(videoid, user_id):
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
         logo.thumbnail((500, 500), Image.LANCZOS)
-        width = int((1280 - 500) / 3)
+        width = int((1280 - 500) / 10)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 138), mask=logo)
+        background.paste(logo, (width + 2, 120), mask=logo)
         background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
@@ -274,7 +274,7 @@ async def gen_qthumb(videoid, user_id):
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 530),
+                    ((1280 - text_w) / 2, 130),
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
@@ -295,7 +295,7 @@ async def gen_qthumb(videoid, user_id):
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1280 - text_w) / 2, 660),
+            ((1280 - text_w) / 2, 690),
             f"Duration: {duration} Mins",
             fill="white",
             font=arial,
