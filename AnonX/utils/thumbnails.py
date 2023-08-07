@@ -110,9 +110,9 @@ async def gen_thumb(videoid, user_id):
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
         logo.thumbnail((500, 500), Image.LANCZOS)
-        width = int((1280 - 500) / 7)
+        width = int((1280 - 500) / 8)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 128), mask=logo)
+        background.paste(logo, (width + 2, 130), mask=logo)
         background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
@@ -124,7 +124,7 @@ async def gen_thumb(videoid, user_id):
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
-                (475, 25),
+                (430, 25),
                 f"STARTED PLAYING",
                 fill="white",
                 stroke_width=3,
@@ -250,9 +250,9 @@ async def gen_qthumb(videoid, user_id):
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
         logo.thumbnail((500, 500), Image.LANCZOS)
-        width = int((1280 - 500) / 7)
+        width = int((1280 - 500) / 8)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 128), mask=logo)
+        background.paste(logo, (width + 2, 130), mask=logo)
         background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
@@ -264,7 +264,7 @@ async def gen_qthumb(videoid, user_id):
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
-                (475, 25),
+                (430, 25),
                 "ADDED TO QUEUE",
                 fill="white",
                 stroke_width=5,
