@@ -112,7 +112,7 @@ async def gen_thumb(videoid, user_id):
         logo.thumbnail((600, 600), Image.LANCZOS)
         width = int((1280 - 600) / 6)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 129), mask=logo)
+        background.paste(logo, (width + 2, 128), mask=logo)
         background.paste(x, (730, 50), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
@@ -252,7 +252,7 @@ async def gen_qthumb(videoid, user_id):
         logo.thumbnail((600, 600), Image.LANCZOS)
         width = int((1280 - 600) / 6)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 129), mask=logo)
+        background.paste(logo, (width + 2, 128), mask=logo)
         background.paste(x, (710, 50), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
