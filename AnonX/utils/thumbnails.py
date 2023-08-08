@@ -117,11 +117,11 @@ async def gen_thumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("AnonX/assets/font2.ttf", 40)
-        ImageFont.truetype("AnonX/assets/font2.ttf", 65)
-        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 25)
-        ImageFont.truetype("AnonX/assets/font.ttf", 25)
-        para = textwrap.wrap(title, width=32)
+        font = ImageFont.truetype("AnonX/assets/font2.ttf", 35)
+        ImageFont.truetype("AnonX/assets/font2.ttf", 60)
+        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 20)
+        ImageFont.truetype("AnonX/assets/font.ttf", 20)
+        para = textwrap.wrap(title, width=28)
         try:
             draw.text(
                 (4300, 25),
@@ -155,7 +155,7 @@ async def gen_thumb(videoid, user_id):
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1400 - text_w) / 1, 300),
+            ((1400 - text_w) / 1, 400),
             f"{duration}",
             fill="white",
             font=arial,
@@ -257,11 +257,11 @@ async def gen_qthumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("AnonX/assets/font2.ttf", 40)
-        ImageFont.truetype("AnonX/assets/font2.ttf", 65)
-        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 25)
-        ImageFont.truetype("AnonX/assets/font.ttf", 25)
-        para = textwrap.wrap(title, width=32)
+        font = ImageFont.truetype("AnonX/assets/font2.ttf", 35)
+        ImageFont.truetype("AnonX/assets/font2.ttf", 60)
+        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 20)
+        ImageFont.truetype("AnonX/assets/font.ttf", 20)
+        para = textwrap.wrap(title, width=28)
         try:
             draw.text(
                 (43000, 25),
@@ -295,7 +295,7 @@ async def gen_qthumb(videoid, user_id):
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1400 - text_w) / 1, 300),
+            ((1400 - text_w) / 1, 400),
             f"{duration}",
             fill="white",
             font=arial,
