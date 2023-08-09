@@ -23,9 +23,9 @@ def changeImageSize(maxWidth, maxHeight, image):
 
 
 def add_corners(im):
-    bigsize = (im.size[0] * 2, im.size[2] * 2)
+    bigsize = (im.size[0] * 3, im.size[1] * 3)
     mask = Image.new("L", bigsize, 0)
-    ImageDraw.Draw(mask).ellipse((0, 0) + bigsize, fill=355)
+    ImageDraw.Draw(mask).ellipse((0, 0) + bigsize, fill=255)
     mask = mask.resize(im.size, Image.LANCZOS)
     mask = ImageChops.darker(mask, im.split()[-2])
     im.putalpha(mask)
@@ -72,9 +72,9 @@ async def gen_thumb(videoid, user_id):
             hehe = await app.get_profile_photos(app.id)
             wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
         xy = Image.open(wxy)
-        a = Image.new('L', [740, 740], 0)
+        a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (740,740)], 0, 460, fill = 355, outline = "white")
+        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
