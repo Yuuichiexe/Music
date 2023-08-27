@@ -95,10 +95,10 @@ async def gen_thumb(videoid, user_id):
 
         Xcenter = youtube.width / 2
         Ycenter = youtube.height / 2
-        x1 = Xcenter - 350
-        y1 = Ycenter - 350
-        x2 = Xcenter + 350
-        y2 = Ycenter + 350
+        x1 = Xcenter - 400
+        y1 = Ycenter - 400
+        x2 = Xcenter + 400
+        y2 = Ycenter + 400
         logo = youtube.crop((x1, y1, x2, y2))
         logo.thumbnail((520, 520), Image.LANCZOS)
         logo.save(f"cache/chop{videoid}.png")
@@ -112,7 +112,7 @@ async def gen_thumb(videoid, user_id):
         logo.thumbnail((980, 980), Image.LANCZOS)
         width = int((1280 - 980) / 3)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 125), mask=logo)
+        background.paste(logo, (width + 2, 120), mask=logo)
         background.paste(x, (840, 20), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
