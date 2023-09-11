@@ -79,7 +79,7 @@ async def gen_thumb(videoid, user_id):
         d = np.array(a)
         e = np.dstack((c, d))
         f = Image.fromarray(e)
-        x = f.resize((50, 400))
+        x = f.resize((420, 420))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
         bg = Image.open(f"AnonX/assets/anonx.png")
@@ -126,7 +126,7 @@ async def gen_thumb(videoid, user_id):
             draw.text(
                 (55, 560),
             f"{channel} | {views[:23]}",
-            (255, 255, 255),
+            (300, 300, 300),
             font=arial,
             )
             if para[0]:
